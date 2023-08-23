@@ -167,4 +167,4 @@ we would like to thank Microverse for their continued support
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](/LICENSE) licensed.
+This project is [MIT](./LICENCE) licensed.
