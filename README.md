@@ -25,9 +25,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 maths magicians <a name="about-project"></a>
+# 📖 Blog Application<a name="about-project"></a>
 
-**maths magicians**
+**Blog Application**
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -38,23 +38,18 @@
 > HTML
 > CSS
 > Webpack
-> linters: lighthouse, webhint, stylelint, eslint
+> linters: lighthouse, webhint, stylelint, eslint, RSpec
 > JavaScript
+> Ruby on Rail
 > with the help of VS Ccode
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **Impressive user interface**
-- **User friendly**
-- **powerful interactive features**
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link](https://bookstore-820b.onrender.com/)
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- GETTING STARTED -->
+- **Creating Post**
+- **Like of Post**
+- **Comment on Post**
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -65,7 +60,7 @@ In order to run this project you need:
 Example command:
 
 ```sh
- npm start
+ rail server
 ```
 
 ### Setup
@@ -76,7 +71,7 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone (https://github.com/Peter-Dumbari/Maths-Magician.git)
+  git clone (https://github.com/Peter-Dumbari/Blog-Application.git)
 ```
 
 ### Install
@@ -138,9 +133,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **linkers**
-- [ ] **visionary**
-- [ ] **likable display**
+- [ ] **Generating API**
+- [ ] **Deployment**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,7 +144,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Peter-Dumbari/Maths-Magician/issues).
+Feel free to check the [issues page](https://github.com/Peter-Dumbari/Blog-Application/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
