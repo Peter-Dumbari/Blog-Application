@@ -21,6 +21,6 @@ class Post < ApplicationRecord
   private
 
   def update_user_posts_counter
-    author.update(posts_counter: author.posts.count + 1)
+    author.update(posts_counter: author.posts.count)
   end
 end
