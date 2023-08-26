@@ -26,7 +26,7 @@
 
 # 📖 Blog Application<a name="about-project"></a>
 
-**Blog Application**
+**Blog Application is an application that allows you to create a book, comment and also likes post**
 
 ## 🛠 Built With <a name="built-with"></a>
 
