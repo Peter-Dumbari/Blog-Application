@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  # described the model
+  # described the model using RSPEC
   describe '#update_post_likes_counter' do
     it 'updates the post likes_counter attrubute' do
       # Arrange
