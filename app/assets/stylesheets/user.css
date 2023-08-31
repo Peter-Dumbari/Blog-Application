@@ -1,6 +1,7 @@
 :root {
   --purple: rgb(146, 28, 162);
   --light_purple: rgb(214, 180, 244);
+  --dark_purple: rgb(42, 1, 81);
 }
 
 body {
@@ -10,7 +11,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--dark_purple);
 }
 
 #user {
@@ -52,9 +53,9 @@ a {
   justify-content: center;
 }
 
-button {
+/* button {
   background-color: var(--light_purple);
   min-height: 2rem;
   border: 0.2rem solid var(--purple);
   border-radius: 5px;
-}
+} */
