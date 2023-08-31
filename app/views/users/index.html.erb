@@ -1,1 +1,5 @@
-<h1>Users</h1>
+<%= "No users" if @user.empty? %>
+<% @user.each do |user| %>
+    <a href="<%= user_path(user) %>"><%= render user%></a>
+    <br>
+<% end %>
