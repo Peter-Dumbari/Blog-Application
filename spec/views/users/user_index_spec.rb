@@ -1,50 +1,68 @@
 require 'rails_helper'
 
-RSpec.describe 'users', type: :request do
-  let!(:user) do
+RSpec.describe 'user index view page', type: :system do
+  let!(:user1) do
     User.create(
       name: 'test user1',
-      photo: 'https://example.com/default-photo.jpg',
-      bio: 'test_bio',
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrkfBY9UTdiEHSYCSo7iuM4k1Eyv-u9YwGqQ&usqp=CAU',
+      bio: 'test_bio1',
+      posts_counter: 1
+    )
+  end
+
+  let!(:user2) do
+    User.create(
+      name: 'test user2',
+      photo: 'https://lumiere-a.akamaihd.net/v1/images/ct_cinderella_upcportalreskin_20694_f7c876a1.jpeg?region=0,0,330,330',
+      bio: 'test_bio2',
       posts_counter: 2
     )
   end
-  describe 'GET /index', type: :request do
-    before(:example) { get '/users' }
 
-    it 'displays a list of users' do
-      expect(response).to have_http_status(200)
+  let!(:user3) do
+    User.create(
+      name: 'test user3',
+      photo: 'https://www.rd.com/wp-content/uploads/2020/11/RD-mickey-mouse-GettyImages-1137134597-JVcrop.jpg',
+      bio: 'test_bio3',
+      posts_counter: 0
+    )
+  end
+
+  describe 'user content' do
+    before(:example) do
+      visit users_path
     end
 
-    it 'renders the correct template' do
-      expect(response).to render_template('index')
+    it 'can see all users names' do
+      expect(page).to have_content(user1.name)
+      expect(page).to have_content(user2.name)
+      expect(page).to have_content(user3.name)
     end
 
-    it 'includes correct placeholder text in the response body' do
-      expect(response.body).to include('Number of posts: 2')
+    it ' can see profile picture' do
+      expect(page).to have_selector('img#user-image[src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrkfBY9UTdiEHSYCSo7iuM4k1Eyv-u9YwGqQ&usqp=CAU"]')
+      expect(page).to have_selector('img#user-image[src="https://lumiere-a.akamaihd.net/v1/images/ct_cinderella_upcportalreskin_20694_f7c876a1.jpeg?region=0,0,330,330"]')
+      expect(page).to have_selector('img#user-image[src="https://www.rd.com/wp-content/uploads/2020/11/RD-mickey-mouse-GettyImages-1137134597-JVcrop.jpg"]')
+    end
+
+    it 'can see posts count' do
+      expect(page).to have_content('Number of posts: 1')
+      expect(page).to have_content('Number of posts: 2')
+      expect(page).to have_content('Number of posts: 0')
     end
   end
-  describe 'GET /show', type: :request do
-    let!(:user) do
-      User.create(
-        name: 'test user',
-        photo: 'https://example.com/photos/0X8086XX09',
-        bio: 'test_bio',
-        posts_counter: 1
-      )
-    end
-    before(:example) { get "/users/#{user.id}" }
 
-    it 'displays the user details for a given user' do
-      expect(response).to have_http_status(200)
+  describe 'click on a user' do
+    before(:example) do
+      visit users_path
     end
 
-    it 'renders the correct template' do
-      expect(response).to render_template('show')
-    end
-
-    it 'includes correct placeholder text in the response body' do
-      expect(response.body).to include('test user')
+    it 'redirects to user show page when clicking on user name' do
+      user_link = find("a[href='#{user_path(user1)}']")
+      user_link.click
+      expect(page).to have_current_path(user_path(user1))
+      expect(page).to have_content(user1.name)
+      expect(page).to have_content(user1.bio)
     end
   end
 end
