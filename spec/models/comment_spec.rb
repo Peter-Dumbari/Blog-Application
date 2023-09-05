@@ -4,7 +4,7 @@ RSpec.describe Comment, type: :model do
   describe '#update_post_comments_counter' do
     it 'updates the post comments_counter attribute' do
       # Arrange
-      user = User.create(name: 'Sandeep')
+      user = User.create(name: 'Peter')
       post = Post.create(title: 'Hello', author: user)
       # comment = Comment.create(author: user, post:)
       comment = Comment.new(author: user, post:)
