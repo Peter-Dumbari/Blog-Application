@@ -101,7 +101,7 @@ To run tests, run the following command:
 Example command:
 
 ```sh
-  npm tests
+  rspec spec
 ```
 
 ### Deployment

@@ -5,7 +5,7 @@ RSpec.describe Like, type: :model do
   describe '#update_post_likes_counter' do
     it 'updates the post likes_counter attrubute' do
       # Arrange
-      user = User.create(name: 'Sandeep')
+      user = User.create(name: 'Peter')
       post = Post.create(title: 'Hi', author: user)
       # like = Like.create(author: user, post:)
       like = Like.new(author: user, post:)
